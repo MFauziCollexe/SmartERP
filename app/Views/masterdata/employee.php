@@ -623,7 +623,7 @@
                   </div>
                </div>
                <div class="card-body">
-                  Start creating your amazing application! 123213123
+                  tes cahyo
                </div>
                <!-- /.card-body -->
                <div class="card-footer">
