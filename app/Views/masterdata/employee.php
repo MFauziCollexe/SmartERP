@@ -623,7 +623,7 @@
                   </div>
                </div>
                <div class="card-body">
-                  tes cahyo
+                  tes cahyo gay
                </div>
                <!-- /.card-body -->
                <div class="card-footer">
