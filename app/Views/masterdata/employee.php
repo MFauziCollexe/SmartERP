@@ -54,7 +54,7 @@
                   <img src="/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
                </div>
                <div class="info">
-                  <a href="<?= base_url('page/login') ?>" class="d-block">Mukhammad Fauzi</a>
+                  <a href="<?= base_url('page/login') ?>" class="d-block">Satrio Cahyo</a>
                </div>
             </div>
             <!-- SidebarSearch Form -->
@@ -593,26 +593,25 @@
             <div class="container-fluid">
                <div class="row mb-2">
                   <div class="col-sm-6">
-                     <h1>Tes</h1>
+                     <h1>Master Data Employee</h1>
                   </div>
                   <div class="col-sm-6">
                      <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Blank Page</li>
+                        <li class="breadcrumb-item active">Master Data Employee</li>
                      </ol>
                   </div>
                </div>
-            </div><!-- /.container-fluid -->
+            </div>
+            <!-- /.container-fluid -->
          </section>
 
          <!-- Main content -->
          <section class="content">
-
             <!-- Default box -->
             <div class="card">
                <div class="card-header">
-                  <h3 class="card-title">Title</h3>
-
+                  <h3 class="card-title">Employee</h3>
                   <div class="card-tools">
                      <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
                         <i class="fas fa-minus"></i>
@@ -623,7 +622,256 @@
                   </div>
                </div>
                <div class="card-body">
-                  tes cahyo gay
+                  <div class="row">
+                     <div class="col-sm-10">
+                        <button type="button" data-toggle="modal" class="btn btn-primary" data-target="#modal-AddData">Add</button>
+                        <button type="submit" class="btn btn-primary">Edit</button>
+                        <button type="submit" class="btn btn-primary">Delete</button>
+                     </div>
+                     <!-- <div style="margin-left: auto;margin-right: 0;"> -->
+                              <!-- <div class="col-sm-2">
+                        <div id="example1_filter" class="dataTables_filter">
+                           <label>
+                              <input id="myInput" type="search" class="form-control form-control-sm" placeholder="Search" aria-controls="TableSection"> </label>
+                        </div>
+                     </div> -->
+                  </div>
+									<br>
+               <!-- modal -->
+               <form id="quickForm" novalidate>
+                  <div class="modal fade" id="modal-AddData" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h4 class="modal-title">Add Master Data Section</h4>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                           </div>
+                           <div class="modal-body">
+                              <div class="form-group">
+                                 <label for="EmployeeID">Employee ID</label>
+                                 <input name="EmployeeID" type="EmployeeID" class="form-control" id="EmployeeID" placeholder="Enter Employee ID"> </div>
+                              <div class="form-group">
+                                 <label for="EmployeeName">Employee Name</label>
+                                 <input name="EmployeeName" type="EmployeeName" class="form-control" id="EmployeeName" placeholder="Enter Employee Name"> </div>
+                              <div class="form-group">
+                                 <label for="Fingerprint">Fingerprint</label>
+                                 <input name="Fingerprint" type="Fingerprint" class="form-control" id="Fingerprint" placeholder="Enter Fingerprint"> </div>
+                              <div class="form-group">
+                                 <label for="Status">Status</label>
+                                 <input name="Status" type="Status" class="form-control" id="Status" placeholder="Enter Status"> </div>
+                              <div class="form-group">
+                                 <label for="Gender">Gender</label>
+                                 <br>
+                                 <select class="form-select w-auto" id="Gender" aria-label="form select example">
+                                    <option selected value="L">Laki -Laki</option>
+                                    <option value="P">Perempuan</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="modal-footer justify-content-between">
+                              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                              <button type="submit" id="my_button" class="btn btn-primary">Save changes</button>
+                           </div>
+                        </div>
+                        <!-- /.modal-content -->
+                     </div>
+                     <!-- /.modal-dialog -->
+                  </div>
+                  <!-- /.modal -->
+               </form>
+               <form id="frm-example" method="POST">
+                  <table id="TableSection" class="table table-auto table-responsive table-bordered table-hover" data-toggle="table">
+                     <thead>
+                        <tr class="text-nowrap">
+                           <th></th>
+                           <th>Employee ID</th>
+                           <th>Fingerprint</th>
+                           <th>Employee Name</th>
+                           <th>Status</th>
+                           <th>Group Payroll</th>
+                           <th>Department</th>
+                           <th>Section Name</th>
+                           <th>Position Name</th>
+                           <th>Company Name</th>
+                           <th>Gender</th>
+                           <th>TMK</th>
+                           <th>Birth Date</th>
+                           <th>Start Contract</th>
+                           <th>End Contract</th>
+                           <th>Resign Date</th>
+                           <th>SK Date</th>
+                           <th>Active</th>
+                           <th>Bank Name</th>
+                           <th>Account Name</th>
+                           <th>User Name</th>
+                           <th>Date Record</th>
+                           <th>User Modified</th>
+                           <th>Date Modified</th>
+                        </tr>
+                     </thead>
+                     <tbody id="myTable" class="text-nowrap">
+                        <tr>
+                           <td>1</td>
+                           <td>MDS-00223</td>
+                           <td>20130</td>
+                           <td>AKHMAD NUR HENDRI</td>
+                           <td>Kontrak</td>
+                           <td>Harian TSG-Pelet Mixing</td>
+                           <td>Produksi</td>
+                           <td>Mixing</td>
+                           <td>Operator</td>
+                           <td>PT. MADUSARI MAS</td>
+                           <td>L</td>
+                           <td>24-12-2018</td>
+                           <td>28-05-1983</td>
+                           <td>23-12-2021</td>
+                           <td>23-12-2022</td>
+                           <td>18-12-2022</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>sa</td>
+                           <td>25-11-2022 11:30:09 AM</td>
+                           <td>AZALL</td>
+                           <td>16-01-2023</td>
+                        </tr>
+                        <tr>
+                           <td>2</td>
+                           <td>MDS-00223</td>
+                           <td>20130</td>
+                           <td>AKHMAD NUR HENDRI</td>
+                           <td>Kontrak</td>
+                           <td>Harian TSG-Pelet Mixing</td>
+                           <td>Produksi</td>
+                           <td>Mixing</td>
+                           <td>Operator</td>
+                           <td>PT. MADUSARI MAS</td>
+                           <td>L</td>
+                           <td>24-12-2018</td>
+                           <td>28-05-1983</td>
+                           <td>23-12-2021</td>
+                           <td>23-12-2022</td>
+                           <td>18-12-2022</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>sa</td>
+                           <td>25-11-2022 11:30:09 AM</td>
+                           <td>AZALL</td>
+                           <td>16-01-2023</td>
+                        </tr>
+                        <tr>
+                           <td>3</td>
+                           <td>MDS-00223</td>
+                           <td>20130</td>
+                           <td>AKHMAD NUR HENDRI</td>
+                           <td>Kontrak</td>
+                           <td>Harian TSG-Pelet Mixing</td>
+                           <td>Produksi</td>
+                           <td>Mixing</td>
+                           <td>Operator</td>
+                           <td>PT. MADUSARI MAS</td>
+                           <td>L</td>
+                           <td>24-12-2018</td>
+                           <td>28-05-1983</td>
+                           <td>23-12-2021</td>
+                           <td>23-12-2022</td>
+                           <td>18-12-2022</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>sa</td>
+                           <td>25-11-2022 11:30:09 AM</td>
+                           <td>AZALL</td>
+                           <td>16-01-2023</td>
+                        </tr>
+                        <tr>
+                           <td>4</td>
+                           <td>MDS-00223</td>
+                           <td>20130</td>
+                           <td>AKHMAD NUR HENDRI</td>
+                           <td>Kontrak</td>
+                           <td>Harian TSG-Pelet Mixing</td>
+                           <td>Produksi</td>
+                           <td>Mixing</td>
+                           <td>Operator</td>
+                           <td>PT. MADUSARI MAS</td>
+                           <td>L</td>
+                           <td>24-12-2018</td>
+                           <td>28-05-1983</td>
+                           <td>23-12-2021</td>
+                           <td>23-12-2022</td>
+                           <td>18-12-2022</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>sa</td>
+                           <td>25-11-2022 11:30:09 AM</td>
+                           <td>AZALL</td>
+                           <td>16-01-2023</td>
+                        </tr>
+                        <tr>
+                           <td>5</td>
+                           <td>MDS-00223</td>
+                           <td>20130</td>
+                           <td>AKHMAD NUR HENDRI</td>
+                           <td>Kontrak</td>
+                           <td>Harian TSG-Pelet Mixing</td>
+                           <td>Produksi</td>
+                           <td>Mixing</td>
+                           <td>Operator</td>
+                           <td>PT. MADUSARI MAS</td>
+                           <td>L</td>
+                           <td>24-12-2018</td>
+                           <td>28-05-1983</td>
+                           <td>23-12-2021</td>
+                           <td>23-12-2022</td>
+                           <td>18-12-2022</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>sa</td>
+                           <td>25-11-2022 11:30:09 AM</td>
+                           <td>AZALL</td>
+                           <td>16-01-2023</td>
+                        </tr>
+                        <tr>
+                           <td>6</td>
+                           <td>MDS-00223</td>
+                           <td>20130</td>
+                           <td>AKHMAD NUR HENDRI</td>
+                           <td>Kontrak</td>
+                           <td>Harian TSG-Pelet Mixing</td>
+                           <td>Produksi</td>
+                           <td>Mixing</td>
+                           <td>Operator</td>
+                           <td>PT. MADUSARI MAS</td>
+                           <td>L</td>
+                           <td>24-12-2018</td>
+                           <td>28-05-1983</td>
+                           <td>23-12-2021</td>
+                           <td>23-12-2022</td>
+                           <td>18-12-2022</td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td></td>
+                           <td>sa</td>
+                           <td>25-11-2022 11:30:09 AM</td>
+                           <td>AZALL</td>
+                           <td>16-01-2023</td>
+                        </tr>
+                     </tbody>
+                     <tfoot></tfoot>
+                  </table>
+               </form>
+
+               
                </div>
                <!-- /.card-body -->
                <div class="card-footer">
